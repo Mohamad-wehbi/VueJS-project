@@ -1,0 +1,434 @@
+@use "global/reset/reset";
+
+
+:root{
+    --color-text: rgba(0, 0, 0, 0.675);
+    --bg-color: #ebd7d7;
+    --bg-r: #bababa;
+    --bg-white: #fff;
+    --bg-main: #000000;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: sans-serif;
+    font-size: 16px;
+    color: black;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-r);
+}
+
+#app{
+    box-shadow: 0 25px 30px 0 rgba(0, 0, 0, 0.334);
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: 90%;
+    background-color: var(--bg-color);
+    border-radius: 20px;
+}
+
+.home{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+.header{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 15%;
+    padding: 30px 50px 60px 50px;
+    position: relative;
+}
+
+
+.header .unhide{
+    right: 88%;
+}
+
+.colors{
+    width: 140px;
+    padding: 5px 10px;
+    position: absolute;
+    right: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    top: 30px;
+    background-color: var(--bg-white);
+    box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.464);
+    transition: 0.5s;
+    
+}
+
+.header .colors .color-span{
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    justify-content: space-between;
+}
+
+.header .colors .color-span span{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+}
+
+.header .colors i{
+    color: var(--bg-main);
+    position: absolute;
+    font-size: 30px;
+    left: 130%;
+    top: 0;
+}
+
+.header .title .social a i {
+  font-size: 35px;
+  color: var(--bg-main);
+}
+
+.navbar{
+    
+    width: 260px;
+    height: 100%;
+    background-color: var(--bg-main);
+    border-radius: 0 80px 0 20px;
+    padding: 30px 0 70px 70px;
+}
+
+.navbar h2{
+    width: fit-content;
+    font-size: 15px;
+    padding: 7px 11px;
+    background-color: var(--bg-color);
+    border-radius: 15px;
+    color: var(--bg-main);
+    margin-bottom: 60px;
+    margin-top: 25px;
+}
+
+.navbar ul{
+    list-style: none;
+}
+
+
+li{
+    margin-bottom: 25px;
+    padding: 12px 20px;
+    position: relative;
+    color: var(--bg-white);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.active{
+    background-color: var(--bg-color);
+    border-radius: 25px 0 0 25px;
+    color: var(--bg-main);
+    font-weight: bold;
+}
+
+.befor{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 0;
+  top: -20px;
+  background-color: transparent;
+  border-bottom-right-radius: 20px;
+  box-shadow: 7.5px 7.5px 0 7.5px var(--bg-color);   
+}
+
+
+.after{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 0;
+  bottom: -20px;
+  background-color: transparent;
+  border-top-right-radius: 20px;
+  box-shadow: 7.5px -7.5px 0 7.5px var(--bg-color);    
+}
+
+.navbar ul li a{
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--bg-white);
+    width: 100%;
+    height: 100%;
+
+  }
+
+.navbar ul li i{
+    font-size: 15px;
+    margin-right: 20px;
+}
+
+.content{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.content .main{
+    width: calc(100% - 260px);
+    padding: 0 50px 75px 50px;
+    position: relative;
+    margin-bottom: 30px;
+    overflow: auto;
+}
+
+.main .delete-icon{
+  position: fixed;
+  top: 75px;
+  right: 240px;
+}
+.title{
+    width: calc(100% - 260px);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;   
+}
+
+h1{
+    color: var(--bg-main);
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: capitalize;
+    box-shadow: 10px 25px 20px 5px var(--bg-main);
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+}
+
+.title .social i{
+    font-size: 22px;
+    margin-right: 20px;
+    cursor: pointer;
+    color: var(--bg-r);
+    transition: 0.5s;
+}
+
+
+.main .form{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+input{
+    width: 33%;
+    height: 30px;
+    outline: none;
+    border: none;
+    box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.108);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    background-color: var(--bg-white);
+}
+
+input::placeholder{
+    color: #999;
+}
+
+button{
+    outline: none;
+    border: none;
+    background: none;
+    padding: 5px 35px;
+    border-radius: 10px;
+    color: #999;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.activebtn{
+    background-color: var(--bg-main);
+    color: var(--bg-white);
+    padding: 5px 45px;
+    transition: 0.5s;
+    box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.258);
+}
+
+.main .btn{
+    box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.108);
+    margin: 0 auto;
+    width: fit-content;
+    text-align: center;
+    margin-bottom: 15px;
+    background-color: var(--bg-white);
+    border-radius: 10px;
+}
+
+.main .icon i{
+    position: absolute;
+    top: 0;
+    left: 70px;
+    font-size: 25px;
+    color: var(--bg-main);
+}
+
+.main .len-active{
+    position: absolute;
+    top: 0;
+    right: 50px;
+    padding: 5px 35px;
+    border-radius: 10px;
+    color: #999;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: capitalize;
+    background-color: var(--bg-white);
+    transition: 0.5s;
+    box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.258);
+}
+
+.main .sellect-all{
+    position: absolute;
+    top: 0;
+    left: 50px;
+    padding: 5px 35px;
+    border-radius: 10px;
+    color: #999;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: capitalize;
+    background-color: var(--bg-white);
+    transition: 0.5s;
+    box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.258);
+}
+
+.main .color{
+    background-color: var(--bg-main);
+    color: var(--bg-white);
+}
+    
+.table{
+    text-align: center;
+    width: 100%;
+    user-select: none;
+}
+
+.table .head .titlehead{
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-radius: 10px;
+    width: 100%;
+    background-color: var(--bg-main);
+    color: var(--bg-white);
+    margin-bottom: 15px;
+    box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.108);
+    text-transform: capitalize;
+}
+
+.table .head .titlehead span{
+    width: calc(100% / 4);
+}
+
+.table .tbady .user-class{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0;
+    font-weight: 600;
+    text-transform: capitalize;
+    border-radius: 10px;
+    width: 100%;
+    background-color: var(--bg-white);
+    margin-bottom: 3px;
+    box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.166);
+    color: var(--color-text);
+    transition: 0.5s;
+}
+
+.table .tbady .user-class span{
+    line-height: 34px;
+    width: calc(100% / 4);
+    text-transform: capitalize;
+    height: 34px;
+}
+
+.table .tbady .user-class span i{
+    font-size: 18px;
+    color: rgba(212, 27, 27, 0.878);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.table .tbady .user-class span .togel i{
+    color: var(--bg-white);
+}
+
+.table .tbady .user-class span .togel{
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid #999;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.table .tbady .user-class span i:hover{
+    transform: scale(1.1);
+}
+
+.edit{
+    width: 100%;
+    text-align: center;
+}
+
+.opesety{
+    opacity: 0;
+}
+
+.trans{
+   background: var(--bg-main);
+}
+
+.hide{
+    display: none;
+}
+
+.icondel.colorblue{
+    color: var(--bg-main);
+}
+
+.active .maincolor{
+  color: var(--bg-main);
+  font-weight: 800;
+}
+
+.icondel{
+  font-size: 25px;
+    margin: 0;
+    position: absolute;
+    top: -10%;
+    right: 12%;  
+    transition: 0.5s;
+    color: #999;
+}
+
+.icondel:hover{
+  transform: scale(1.2);
+}
+
